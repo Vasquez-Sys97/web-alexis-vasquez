@@ -173,7 +173,7 @@ footer em { font-family: var(--serif); font-size: 22px; color: var(--text); }
   .btn-pill { padding: 0 22px; font-size: 14px; }
   .nav-links { gap: 36px; }
   .hero { grid-template-columns: minmax(0, 1fr) 480px; gap: 48px; align-items: center; padding-top: 72px; padding-bottom: 72px; }
-  .glow { width: 520px; height: 520px; left: auto; right: -20px; top: 60px; transform: none; filter: blur(150px); opacity: .32; }
+  .glow { width: 520px; height: 520px; left: auto; right: 0; top: 60px; transform: none; filter: blur(150px); opacity: .32; }
   .photo-card { order: 2; aspect-ratio: 480 / 620; border-radius: 36px; }
   .hero-copy { order: 1; }
   .photo-card figcaption { left: 28px; bottom: 28px; }
