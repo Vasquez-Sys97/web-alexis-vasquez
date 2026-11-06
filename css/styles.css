@@ -62,7 +62,7 @@ h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(60px, 17vw, 7
 h1 em { color: var(--accent-text); }
 .lede { margin-top: 20px; max-width: 34ch; color: var(--muted); font-size: 17px; }
 .actions { display: flex; flex-direction: column; align-items: stretch; gap: 16px; margin-top: 28px; }
-.cta { display: inline-flex; justify-content: center; align-items: center; gap: 10px; min-height: 56px; padding: 0 30px; border-radius: 999px; background: var(--accent); font-weight: 500; font-size: 16px; transition: transform .3s, background .3s; }
+.cta { display: inline-flex; justify-content: center; align-items: center; gap: 10px; white-space: nowrap; min-height: 56px; padding: 0 30px; border-radius: 999px; background: var(--accent); font-weight: 500; font-size: 16px; transition: transform .3s, background .3s; }
 .cta span { transition: transform .3s; }
 .cta:hover { background: var(--accent-hover); transform: translateY(-2px); }
 .cta:hover span { transform: translateX(4px); }
@@ -160,7 +160,7 @@ footer em { font-family: var(--serif); font-size: 22px; color: var(--text); }
   .tile-item.primary { grid-column: 1 / -1; }
   .tile { min-height: 240px; }
   .nav-links { display: flex; }
-  .actions { flex-direction: row; align-items: center; gap: 16px 28px; }
+  .actions { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 16px 28px; }
   .cta { justify-content: flex-start; }
   .groups { grid-template-columns: 1fr 1fr; gap: 16px; }
   .tools { flex-direction: row; align-items: center; gap: 14px 24px; flex-wrap: wrap; }
@@ -172,7 +172,7 @@ footer em { font-family: var(--serif); font-size: 22px; color: var(--text); }
   .mono { width: 44px; height: 44px; }
   .btn-pill { padding: 0 22px; font-size: 14px; }
   .nav-links { gap: 36px; }
-  .hero { grid-template-columns: minmax(0, 1fr) 480px; gap: 48px; align-items: center; padding-top: 72px; padding-bottom: 72px; }
+  .hero { grid-template-columns: minmax(0, 1fr) clamp(340px, 36vw, 480px); gap: 48px; align-items: center; padding-top: 72px; padding-bottom: 72px; }
   .glow { width: 520px; height: 520px; left: auto; right: 0; top: 60px; transform: none; filter: blur(150px); opacity: .32; }
   .photo-card { order: 2; aspect-ratio: 480 / 620; border-radius: 36px; }
   .hero-copy { order: 1; }
