@@ -43,7 +43,7 @@ Nota: si se editan los enlaces en `site.config.js`, actualizar también el enlac
 
 ## Antes de publicar
 
-1. **Dominio:** en `index.html`, cambiar `og:image` y `twitter:image` a URLs absolutas (por ejemplo `https://tudominio.com/assets/img/og-image.jpg`) y agregar `og:url`. Sin esto, las vistas previas al compartir no cargan la imagen.
+1. **Dominio propio (opcional):** la página está en <https://vasquez-sys97.github.io/web-alexis-vasquez/>. Si se conecta un dominio propio, actualizar `canonical`, `og:url`, `og:image` y `twitter:image` en `index.html`; las vistas previas al compartir necesitan URLs absolutas.
 2. **Fuentes:** se cargan desde Google Fonts (Instrument Serif e Inter). Para evitar la solicitud externa y mejorar la privacidad, se pueden descargar y servir desde `assets/fonts/`.
 3. **Foto en pantallas muy nítidas:** la fuente es de 1024 px. En monitores de alta densidad (retina) puede verse levemente suave; una foto original de mayor resolución lo resolvería.
 4. **Verificar los tres enlaces** a mano (ver abajo).
@@ -55,7 +55,7 @@ Es un sitio estático: sirve cualquier alojamiento estático.
 - **Vercel:** subir la carpeta a un repositorio de GitHub e importarlo en Vercel (Framework Preset: *Other*, sin comando de build, directorio de salida `.`). O arrastrar la carpeta en el panel de Vercel.
 - **Alternativas:** GitHub Pages, Netlify, Cloudflare Pages.
 
-No se ha publicado nada. Los enlaces solo se harán públicos cuando se despliegue el sitio.
+Publicada con GitHub Pages desde la rama `main`: <https://vasquez-sys97.github.io/web-alexis-vasquez/>. Cada `git push` a `main` actualiza el sitio en uno o dos minutos.
 
 ## Estado de verificación (2026-11-06)
 
