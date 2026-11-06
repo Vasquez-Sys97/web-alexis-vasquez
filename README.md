@@ -1,7 +1,17 @@
-# Web personal — Alexis Vásquez (v2 moderna)
+# Web personal — Alexis Vásquez (v3)
 
 Página de una sola vista (hub personal) en HTML, CSS y JavaScript estático. Sin Node.js, sin backend, sin base de datos.
-Diseño: **Dark Editorial v2** (carbón + marfil, acento borgoña `#B3243A`). Es la versión llevada a código del diseño de Figma: navegación flotante en píldora, foto en tarjeta redondeada con brillo borgoña, conexiones en tarjetas (LinkedIn destacada) e identidad en dos tarjetas.
+Diseño: **Dark Editorial v3** (carbón + marfil, acento borgoña `#B3243A`). Es la v2 más cuatro adiciones del diseño de Figma: franja de herramientas, trayectoria y formación, credenciales por grupos y dos gráficos decorativos (mapa de calor de riesgo y triángulo de cosechas, sin datos reales).
+
+## Contenido que debe mantenerse veraz
+
+Todo sale del perfil de LinkedIn de Alexis (revisado el 2026-11-06). Al actualizar, cambiar solo lo que cambie en LinkedIn:
+
+- **Trayectoria y formación:** bloque `#trayectoria` en `index.html`. La entrada de Administración de Empresas dice «Cursando la última asignatura»; actualizarla al graduarse con el dato exacto.
+- **Credenciales:** bloque `#credenciales` en `index.html`. No se publican IDs de credencial ni vencimientos; el enlace final lleva al perfil de LinkedIn.
+- **Herramientas:** franja `.tools`. Solo herramientas respaldadas por una certificación.
+- **Gráficos decorativos:** se generan en `js/main.js` (matriz `M` y fórmula de opacidad); son ilustrativos y no representan datos reales.
+
 ## Ver la página en local
 
 Desde la carpeta del proyecto:
@@ -64,6 +74,8 @@ Probado en navegador (Chromium del panel de la app) contra el diseño de Figma:
 - Sin errores en consola; HTML, CSS, JS, imágenes y fuentes cargan.
 - Sin desplazamiento horizontal en 1440 px y 390 px; todos los enlaces miden ≥ 44 px de alto.
 - Escritorio: tarjetas de conexión 2:1:1 (584/292/292 px), foto 480×620. Móvil: tarjetas apiladas de 350 px de ancho.
+- v3: 4 grupos con 11 certificados (3+3+2+3, coinciden con el perfil), 25 celdas en el mapa de calor y 28 en el triángulo. Altura total: ≈ 3.800 px en escritorio y ≈ 5.700 px en móvil. El triángulo cabe en móvil (301 px dentro de 302 disponibles).
+- El diseño de Figma de la v3 tiene un recorte conocido de la comilla en la tarjeta móvil; en el código no ocurre.
 - Foco visible con teclado (contorno marfil de 2 px). Los tres enlaces sociales y los dos botones de LinkedIn apuntan a los destinos de `site.config.js`.
 - Contraste (WCAG, calculado sobre los colores de diseño): texto 16,6:1, texto secundario 7,7:1, acento en texto 6,0:1, texto sobre botón 5,6:1 (AA ≥ 4,5). Las leyendas sobre la foto se apoyan en un degradado oscuro; se revisaron a ojo, no con medición.
 - En móvil el botón principal queda debajo del primer pantallazo; el acceso a LinkedIn visible arriba es el botón de la barra de navegación.

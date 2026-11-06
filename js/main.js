@@ -53,7 +53,7 @@
     });
   }
 
-  // Los botones principales apuntan al enlace marcado como primary.
+  // Los botones y enlaces principales apuntan al enlace marcado como primary.
   var primary = links.filter(function (l) { return l.primary; })[0];
   if (primary) {
     document.querySelectorAll('[data-link-primary]').forEach(function (a) {
@@ -61,6 +61,30 @@
       a.target = '_blank';
       a.rel = 'noopener noreferrer';
     });
+  }
+
+  // Gráficos decorativos (sin datos reales): mapa de calor de riesgo y triángulo de cosechas.
+  function cell(o) {
+    var i = document.createElement('i');
+    i.style.setProperty('--o', Math.min(1, o).toFixed(3));
+    return i;
+  }
+  var heat = document.querySelector('[data-grid="heat"]');
+  if (heat) {
+    // Probabilidad x impacto: la intensidad crece hacia la esquina superior derecha.
+    var M = [[.10,.14,.22,.36,.55],[.08,.12,.20,.30,.46],[.06,.10,.16,.24,.36],[.05,.08,.12,.18,.26],[.04,.06,.08,.12,.17]];
+    M.forEach(function (row) { row.forEach(function (v) { heat.appendChild(cell(0.22 + 0.6 * v / 0.55)); }); });
+  }
+  var cosecha = document.querySelector('[data-grid="cosecha"]');
+  if (cosecha) {
+    var N = 7;
+    for (var r = 0; r < N; r++) {
+      var row = el('div');
+      for (var c = 0; c < N - r; c++) {
+        row.appendChild(cell(0.26 + 0.66 * Math.min(1, (c / (N - 1)) * 0.9 + (r / (N - 1)) * 0.25)));
+      }
+      cosecha.appendChild(row);
+    }
   }
 
   var year = document.getElementById('anio');
